@@ -1,0 +1,134 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcyi54yuqnoog"]
+
+[ext_resource type="Script" path="res://mainmenu.gd" id="1_1b0nh"]
+[ext_resource type="FontFile" uid="uid://y12pv6vd641o" path="res://Fonts/Calibri/calibrib.ttf" id="2_xl2dh"]
+[ext_resource type="FontFile" uid="uid://dakf6jojb7x3e" path="res://Fonts/Calibri/calibri.ttf" id="3_pop43"]
+[ext_resource type="FontFile" uid="uid://d18oftj442jvg" path="res://Fonts/Times New Roman/times.ttf" id="4_u2ill"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1b0nh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0607018, 0.112215, 0.163494, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 432.0
+grow_vertical = 2
+color = Color(0.0352941, 0.0705882, 0.109804, 1)
+
+[node name="Button1" type="Button" parent="CanvasLayer/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 400.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_xl2dh")
+theme_override_font_sizes/font_size = 32
+text = "Complex Numbers
+"
+
+[node name="Button2" type="Button" parent="CanvasLayer/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 112.0
+offset_right = 400.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("2_xl2dh")
+theme_override_font_sizes/font_size = 30
+text = "2D Stereographic Projection"
+
+[node name="Button3" type="Button" parent="CanvasLayer/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 192.0
+offset_right = 400.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("2_xl2dh")
+theme_override_font_sizes/font_size = 30
+text = "3D Stereographic Projection"
+
+[node name="Button4" type="Button" parent="CanvasLayer/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 272.0
+offset_right = 400.0
+offset_bottom = 336.0
+theme_override_fonts/font = ExtResource("2_xl2dh")
+theme_override_font_sizes/font_size = 32
+text = "Quaternions"
+
+[node name="Button5" type="Button" parent="CanvasLayer/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 352.0
+offset_right = 400.0
+offset_bottom = 416.0
+theme_override_fonts/font = ExtResource("2_xl2dh")
+theme_override_font_sizes/font_size = 32
+text = "Hypersphere"
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -128.0
+offset_right = 432.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0705882, 0.109804, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_pop43")
+theme_override_font_sizes/font_size = 32
+text = "Student: Hussein Alaa Alhusseini
+School: Al Thura Secondary School
+for Distinguished Students
+Grade: 5th Preparatory
+Supervised by: Mohammed Sameer
+and Ali Khalid"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 140.0
+offset_right = 535.0
+offset_bottom = 287.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_u2ill")
+theme_override_font_sizes/font_size = 64
+text = "Exploring the 4ᵗʰ Dimension
+and its Applications"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/ColorRect/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/ColorRect/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/ColorRect/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/ColorRect/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/ColorRect/Button5" to="." method="_on_button_5_pressed"]

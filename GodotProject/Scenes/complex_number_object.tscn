@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn6oxgjmmih62"]
+
+[ext_resource type="Script" path="res://Scripts/complex_number.gd" id="1_0eyrc"]
+[ext_resource type="Script" path="res://Scripts/circle2d.gd" id="1_2p40x"]
+[ext_resource type="FontFile" uid="uid://y12pv6vd641o" path="res://Fonts/Calibri/calibrib.ttf" id="3_o4a4x"]
+
+[node name="ComplexNumber" type="Node2D"]
+script = ExtResource("1_0eyrc")
+
+[node name="xLine" type="Line2D" parent="."]
+scale = Vector2(1e-05, 1)
+points = PackedVector2Array(0, 0, 100, 0)
+width = 6.0
+default_color = Color(0, 1, 0, 1)
+
+[node name="xCircle" type="Polygon2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+color = Color(0, 1, 0, 1)
+script = ExtResource("1_2p40x")
+radius = 10.0
+
+[node name="yLine" type="Line2D" parent="."]
+rotation = -1.5708
+scale = Vector2(1e-05, 1)
+points = PackedVector2Array(0, 0, 100, 0)
+width = 6.0
+default_color = Color(1, 0.647059, 0, 1)
+
+[node name="yCircle" type="Polygon2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+color = Color(1, 0.647059, 0, 1)
+script = ExtResource("1_2p40x")
+radius = 10.0
+
+[node name="Line" type="Line2D" parent="."]
+scale = Vector2(1e-05, 1)
+points = PackedVector2Array(0, 0, 100, 0)
+width = 6.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="Circle" type="Polygon2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+color = Color(1, 0, 0, 1)
+script = ExtResource("1_2p40x")
+radius = 10.0
+
+[node name="Label" type="Label" parent="Circle"]
+offset_left = 15.0
+offset_top = -15.0
+offset_right = 97.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_o4a4x")
+theme_override_font_sizes/font_size = 32

@@ -1,0 +1,286 @@
+[gd_scene load_steps=10 format=3 uid="uid://5n0q0mj0yjh5"]
+
+[ext_resource type="Script" path="res://Scripts/sphere.gd" id="1_oivbo"]
+[ext_resource type="Script" path="res://Scripts/camera_rotator.gd" id="2_aph3d"]
+[ext_resource type="FontFile" uid="uid://d18oftj442jvg" path="res://Fonts/Times New Roman/times.ttf" id="3_7duc5"]
+[ext_resource type="PackedScene" uid="uid://b0qyqsdhsd2y8" path="res://Scenes/surface_projection.tscn" id="3_fecvd"]
+[ext_resource type="Script" path="res://Scripts/axes3d.gd" id="4_2vq5x"]
+[ext_resource type="FontFile" uid="uid://bcmoape4415gt" path="res://Fonts/Times New Roman/timesbd.ttf" id="4_x4sui"]
+[ext_resource type="Script" path="res://Scripts/face.gd" id="5_wvcpj"]
+[ext_resource type="FontFile" uid="uid://deg7ptova43bn" path="res://Fonts/Times New Roman/timesbi.ttf" id="6_n5spx"]
+[ext_resource type="FontFile" uid="uid://dakf6jojb7x3e" path="res://Fonts/Calibri/calibri.ttf" id="9_a4l8v"]
+
+[node name="Flatlander" type="Node3D"]
+
+[node name="CameraRotator" type="Node3D" parent="."]
+script = ExtResource("2_aph3d")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
+
+[node name="k1" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.2, 0.2)
+text = "1"
+font = ExtResource("4_x4sui")
+font_size = 48
+
+[node name="k2" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 2.2, 0.2)
+text = "2"
+font = ExtResource("3_7duc5")
+font_size = 48
+
+[node name="k3" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, 0.2)
+text = "3"
+font = ExtResource("3_7duc5")
+font_size = 48
+
+[node name="k-1" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.798636, 0.601815, 0, -0.601815, 0.798636, 0, -1.2, 0.2)
+text = "-1"
+font = ExtResource("3_7duc5")
+font_size = 48
+
+[node name="k-2" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -2.2, 0.2)
+text = "-2"
+font = ExtResource("3_7duc5")
+font_size = 64
+
+[node name="k-3" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, -3.2, 0.2)
+text = "-3"
+font = ExtResource("3_7duc5")
+font_size = 72
+
+[node name="Axes3D" type="Node3D" parent="."]
+script = ExtResource("4_2vq5x")
+
+[node name="StaticLabels" type="Node3D" parent="."]
+
+[node name="i1" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.2, 0.2, 0)
+text = "i"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="i2" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.2, 0.2, 0)
+text = "2i"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="i3" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.2, 0.2, 0)
+text = "3i"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="i-1" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.2, 0.2, 0)
+text = "-i"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="i-2" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.2, 0.2, 0)
+text = "-2i"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="i-3" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.2, 0.2, 0)
+text = "-3i"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="j1" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, -1.2)
+text = "j"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="j2" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, -2.2)
+text = "2j"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="j3" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, -3.2)
+text = "3j"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="j-1" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, 1.2)
+text = "-j"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="j-2" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, 2.2)
+text = "-2j"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="j-3" type="Label3D" parent="StaticLabels"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, 3.2)
+text = "-3j"
+font = ExtResource("6_n5spx")
+font_size = 64
+
+[node name="Sphere" type="Node3D" parent="."]
+script = ExtResource("1_oivbo")
+subdivisions = 36
+
+[node name="Face" type="MeshInstance3D" parent="Sphere"]
+skeleton = NodePath("../..")
+script = ExtResource("5_wvcpj")
+
+[node name="Projection1" parent="." instance=ExtResource("3_fecvd")]
+
+[node name="Projection2" type="Node3D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 464.0
+offset_bottom = 444.0
+color = Color(0.0352941, 0.0705882, 0.109804, 1)
+
+[node name="decreaseButton1" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 96.0
+offset_right = 300.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "⬇️"
+
+[node name="increaseButton1" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 96.0
+offset_right = 420.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "⬆️
+"
+
+[node name="decreaseButton2" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 176.0
+offset_right = 300.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "⬇️"
+
+[node name="increaseButton2" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 176.0
+offset_right = 420.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "⬆️
+"
+
+[node name="decreaseButton3" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 256.0
+offset_right = 300.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "⬇️"
+
+[node name="increaseButton3" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 256.0
+offset_right = 420.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "⬆️
+"
+
+[node name="gobackbtn" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 336.0
+offset_right = 420.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "Go Back"
+
+[node name="label1" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 180.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "X Rotation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label2" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 176.0
+offset_right = 180.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "Y Rotation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label3" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 256.0
+offset_right = 180.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "Z Rotation
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label4" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 300.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("9_a4l8v")
+theme_override_font_sizes/font_size = 28
+text = "Projection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="check1" type="CheckButton" parent="CanvasLayer/ColorRect"]
+offset_left = 316.0
+offset_top = 16.0
+offset_right = 380.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+action_mode = 0
+
+[connection signal="button_down" from="CanvasLayer/ColorRect/gobackbtn" to="Sphere" method="_on_gobackbtn_button_down"]
+[connection signal="toggled" from="CanvasLayer/ColorRect/check1" to="Projection1" method="_on_check_1_toggled"]

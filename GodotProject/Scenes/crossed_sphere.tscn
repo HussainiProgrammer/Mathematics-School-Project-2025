@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://6tvd2sdk2l0a"]
+
+[ext_resource type="Script" path="res://Scripts/crossed_sphere.gd" id="1_wyeq1"]
+[ext_resource type="Script" path="res://Scripts/variable_color_sphere.gd" id="2_s3h8f"]
+[ext_resource type="Script" path="res://Scripts/camera_rotator.gd" id="3_7dl7k"]
+[ext_resource type="Script" path="res://Scenes/plate.gd" id="5_jdwhr"]
+[ext_resource type="Script" path="res://Scripts/axes3d.gd" id="6_naaon"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hlr6j"]
+radius = 1.0
+height = 2.0
+
+[node name="CrossedSphere" type="Node3D"]
+script = ExtResource("1_wyeq1")
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_hlr6j")
+script = ExtResource("2_s3h8f")
+sphere_color = Color(1, 1, 1, 1)
+
+[node name="CameraRotator" type="Node3D" parent="."]
+script = ExtResource("3_7dl7k")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 3)
+
+[node name="Axes3D" type="Node3D" parent="."]
+script = ExtResource("6_naaon")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.447759, 0.894154, 0, -0.894154, 0.447759, 0, 8, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+script = ExtResource("5_jdwhr")
+scalar = 5.0
+height = -1.0

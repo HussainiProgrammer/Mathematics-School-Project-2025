@@ -1,0 +1,369 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk0adjuwasir4"]
+
+[ext_resource type="PackedScene" uid="uid://bal5q0te6p8lo" path="res://Scenes/dynamic_grid.tscn" id="1_7pacl"]
+[ext_resource type="Script" path="res://Scripts/LinelanderCircle.gd" id="2_wvr1b"]
+[ext_resource type="FontFile" uid="uid://y12pv6vd641o" path="res://Fonts/Calibri/calibrib.ttf" id="3_8co2n"]
+[ext_resource type="Script" path="res://Scripts/point_mark_2d.gd" id="4_68rb7"]
+[ext_resource type="FontFile" uid="uid://dakf6jojb7x3e" path="res://Fonts/Calibri/calibri.ttf" id="5_4hcoy"]
+
+[node name="Linelander" type="Node2D"]
+
+[node name="Grid" parent="." instance=ExtResource("1_7pacl")]
+dynamic_color = Color(1, 1, 1, 1)
+static_color = Color(0.12549, 0.12549, 0.12549, 1)
+main_grid_width = 6.0
+unit_mark_width = 3.0
+spacing = 200
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Lines" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Lines"]
+points = PackedVector2Array(0, 0, 200, 0)
+width = 6.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="Rays" type="Node2D" parent="."]
+
+[node name="posiray" type="Line2D" parent="Rays"]
+points = PackedVector2Array(0, 0, 200, 0)
+width = 6.0
+default_color = Color(1, 0.705882, 0, 1)
+
+[node name="negiray" type="Line2D" parent="Rays"]
+points = PackedVector2Array(0, 0, 200, 0)
+width = 6.0
+default_color = Color(1, 0.705882, 0, 1)
+
+[node name="pos1ray" type="Line2D" parent="Rays"]
+points = PackedVector2Array(0, 0, 200, 0)
+width = 6.0
+default_color = Color(1, 0.705882, 0, 1)
+
+[node name="neg1ray" type="Line2D" parent="Rays"]
+points = PackedVector2Array(0, 0, 200, 0)
+width = 6.0
+default_color = Color(1, 0.705882, 0, 1)
+
+[node name="Circle" type="Node2D" parent="."]
+script = ExtResource("2_wvr1b")
+
+[node name="ChildMarks" type="Node2D" parent="Circle"]
+
+[node name="PointMark2D" type="Node2D" parent="Circle/ChildMarks"]
+position = Vector2(200, 0)
+script = ExtResource("4_68rb7")
+radius = 10.0
+fill_color = Color(1, 0, 0, 1)
+outline_width = 2.0
+
+[node name="1" type="Label" parent="Circle/ChildMarks/PointMark2D"]
+offset_left = 15.0
+offset_right = 97.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_8co2n")
+theme_override_font_sizes/font_size = 38
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="PointMark2D2" type="Node2D" parent="Circle/ChildMarks"]
+position = Vector2(0, 200)
+script = ExtResource("4_68rb7")
+radius = 10.0
+fill_color = Color(0.5, 1, 0, 1)
+outline_width = 2.0
+
+[node name="-i" type="Label" parent="Circle/ChildMarks/PointMark2D2"]
+offset_top = 6.0
+offset_right = 82.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.5, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_8co2n")
+theme_override_font_sizes/font_size = 38
+text = "-i"
+
+[node name="PointMark2D3" type="Node2D" parent="Circle/ChildMarks"]
+position = Vector2(-200, 0)
+script = ExtResource("4_68rb7")
+radius = 10.0
+fill_color = Color(0, 1, 1, 1)
+outline_width = 2.0
+
+[node name="-1" type="Label" parent="Circle/ChildMarks/PointMark2D3"]
+offset_left = -40.0
+offset_right = 42.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_8co2n")
+theme_override_font_sizes/font_size = 38
+text = "-1"
+
+[node name="PointMark2D4" type="Node2D" parent="Circle/ChildMarks"]
+position = Vector2(0, -200)
+script = ExtResource("4_68rb7")
+radius = 10.0
+fill_color = Color(0.5, 0, 1, 1)
+outline_width = 2.0
+
+[node name="i" type="Label" parent="Circle/ChildMarks/PointMark2D4"]
+offset_top = -48.0
+offset_right = 82.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(0.5, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_8co2n")
+theme_override_font_sizes/font_size = 38
+text = "i"
+
+[node name="PointsMarks" type="Node2D" parent="."]
+
+[node name="iMark" type="Node2D" parent="PointsMarks"]
+script = ExtResource("4_68rb7")
+radius = 10.0
+fill_color = Color(0.5, 0, 1, 1)
+outline_width = 2.0
+
+[node name="i" type="Label" parent="PointsMarks/iMark"]
+offset_top = -48.0
+offset_right = 82.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(0.5, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_8co2n")
+theme_override_font_sizes/font_size = 38
+text = "i"
+
+[node name="1Mark" type="Node2D" parent="PointsMarks"]
+position = Vector2(200, 0)
+script = ExtResource("4_68rb7")
+radius = 10.0
+fill_color = Color(1, 0, 0, 1)
+outline_width = 2.0
+
+[node name="1" type="Label" parent="PointsMarks/1Mark"]
+offset_left = 15.0
+offset_right = 97.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_8co2n")
+theme_override_font_sizes/font_size = 38
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="-iMark" type="Node2D" parent="PointsMarks"]
+position = Vector2(0, 200)
+script = ExtResource("4_68rb7")
+radius = 10.0
+fill_color = Color(0.5, 1, 0, 1)
+outline_width = 2.0
+
+[node name="-i" type="Label" parent="PointsMarks/-iMark"]
+offset_top = 6.0
+offset_right = 82.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.5, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_8co2n")
+theme_override_font_sizes/font_size = 38
+text = "-i"
+
+[node name="-1Mark" type="Node2D" parent="PointsMarks"]
+position = Vector2(-200, 0)
+script = ExtResource("4_68rb7")
+radius = 10.0
+fill_color = Color(0, 1, 1, 1)
+outline_width = 2.0
+
+[node name="-1" type="Label" parent="PointsMarks/-1Mark"]
+offset_left = -40.0
+offset_right = 42.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_8co2n")
+theme_override_font_sizes/font_size = 38
+text = "-1"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 404.0
+offset_bottom = 604.0
+color = Color(0.0352941, 0.0705882, 0.109804, 1)
+
+[node name="angleInput" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 120.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "0"
+placeholder_text = "Degrees"
+alignment = 1
+
+[node name="decreaseButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "⬇️"
+
+[node name="increaseButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 360.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "⬆️
+"
+
+[node name="decreaseButton2" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 416.0
+offset_right = 240.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "⬇️"
+
+[node name="gobackbtn" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 496.0
+offset_right = 360.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "Go Back"
+
+[node name="increaseButton2" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 416.0
+offset_right = 360.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "⬆️
+"
+
+[node name="label1" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 180.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "Projection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label2" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 176.0
+offset_right = 180.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "Rays"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label3" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 256.0
+offset_right = 180.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "Circle Marks"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label4" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 336.0
+offset_right = 180.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "Proj. Marks"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label5" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 416.0
+offset_right = 120.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("5_4hcoy")
+theme_override_font_sizes/font_size = 28
+text = "Zoom"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="check1" type="CheckButton" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 96.0
+offset_right = 236.0
+offset_bottom = 160.0
+button_pressed = true
+
+[node name="check2" type="CheckButton" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 176.0
+offset_right = 236.0
+offset_bottom = 240.0
+
+[node name="check3" type="CheckButton" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 256.0
+offset_right = 236.0
+offset_bottom = 320.0
+
+[node name="check4" type="CheckButton" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 336.0
+offset_right = 236.0
+offset_bottom = 400.0
+button_pressed = true
+
+[connection signal="text_submitted" from="CanvasLayer/ColorRect/angleInput" to="Circle" method="_on_angle_input_text_submitted"]
+[connection signal="button_down" from="CanvasLayer/ColorRect/gobackbtn" to="Circle" method="_on_gobackbtn_button_down"]
+[connection signal="toggled" from="CanvasLayer/ColorRect/check1" to="Circle" method="_on_check_1_toggled"]
+[connection signal="toggled" from="CanvasLayer/ColorRect/check2" to="Circle" method="_on_check_2_toggled"]
+[connection signal="toggled" from="CanvasLayer/ColorRect/check3" to="Circle" method="_on_check_3_toggled"]
+[connection signal="toggled" from="CanvasLayer/ColorRect/check4" to="Circle" method="_on_check_4_toggled"]

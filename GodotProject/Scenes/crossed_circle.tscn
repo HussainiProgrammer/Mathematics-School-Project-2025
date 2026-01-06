@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm00qhofo16rg"]
+
+[ext_resource type="Script" path="res://Scripts/crossed_circle.gd" id="1_c3sf6"]
+[ext_resource type="Script" path="res://Scripts/circle2d.gd" id="2_m0sw5"]
+
+[node name="CrossedCircle" type="Node2D"]
+script = ExtResource("1_c3sf6")
+
+[node name="Circle" type="Polygon2D" parent="."]
+script = ExtResource("2_m0sw5")
+segments = 64.0
+radius = 100.0
+
+[node name="Camera2D" type="Camera2D" parent="."]

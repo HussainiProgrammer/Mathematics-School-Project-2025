@@ -1,0 +1,13 @@
+res://Scenes/complex_numbers_scene.tscn::639a2d9fdcb6e31ce044cdb9c8907172::1767660811::res://.godot/exported/133200997/export-efbea3c4824d628b2f3eff15c51eeed8-complex_numbers_scene.scn
+res://Scenes/complex_number_object.tscn::599da2ceb31b438ee0b015b9e0e0b113::1742422572::res://.godot/exported/133200997/export-5c041f7bb5eec966127efad7c5e04a82-complex_number_object.scn
+res://Scenes/dynamic_grid.tscn::a05c682889e37b94f124aeb470294f98::1742409762::res://.godot/exported/133200997/export-40bbb4ac4e3a65f6479e29bf0e5c11ba-dynamic_grid.scn
+res://Scenes/linelander.tscn::1e2c3e8bcb21a99345ea4a37a082187b::1767660811::res://.godot/exported/133200997/export-a9d03c5e2a9798ad217fd121e9236e9f-linelander.scn
+res://Scenes/number_item.tscn::963a379ff0dd7f44a3e1a37a2b363dae::1741005475::res://.godot/exported/133200997/export-0155218cb03ab6c63559c027acaec81c-number_item.scn
+res://Scenes/quaternions.tscn::b231578912f107a1034a5df91cce98cb::1767660812::res://.godot/exported/133200997/export-455a0fc8a28efabf40c097bd93749e58-quaternions.scn
+res://Scenes/crossed_circle.tscn::0123a56c9db957afa20b91754961ff0a::1742146535::res://.godot/exported/133200997/export-7fa2741af52e905229b30a8a1128229f-crossed_circle.scn
+res://Scenes/crossed_sphere.tscn::28b4640861a5dc38071be479daab5b8f::1767650530::res://.godot/exported/133200997/export-f88dba5b1e1c66cda9528bd8ffd252a3-crossed_sphere.scn
+res://Scenes/flatlander.tscn::6c963bfc943ef18a7250bff95b4ccaa9::1767660812::res://.godot/exported/133200997/export-cdc3062da50503d9d1707101c58ebfde-flatlander.scn
+res://Scenes/hyper_sphere_main.tscn::3a947508a072e01887c9e5e55f8fdf1c::1767660812::res://.godot/exported/133200997/export-a375237ac202883a5e81992f7e5ac110-hyper_sphere_main.scn
+res://Scenes/mainmenu.tscn::e45444c8b7834c3aab4ac2e862beb129::1767660811::res://.godot/exported/133200997/export-6a5cc2d46eaa3047576fb0f8c0594535-mainmenu.scn
+res://Scenes/surface_projection.tscn::0fc510594f352569710249b659cfbec3::1742126679::res://.godot/exported/133200997/export-9e990872152eb029c0662a5ea11fca25-surface_projection.scn
+res://wireframe_shader.tres::2903049df69b535532d46b2043861de6::1742146306::res://.godot/exported/133200997/export-bf855b82aa5bd396612947595b3ef7f9-wireframe_shader.res

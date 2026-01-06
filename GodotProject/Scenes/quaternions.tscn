@@ -1,0 +1,430 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhi7hyav1eitc"]
+
+[ext_resource type="Script" path="res://Scripts/camera_rotator.gd" id="2_tgpie"]
+[ext_resource type="Script" path="res://Scenes/new_quat_sphere.gd" id="2_wi1cq"]
+[ext_resource type="Script" path="res://Scripts/face.gd" id="3_3ixt3"]
+[ext_resource type="FontFile" uid="uid://dakf6jojb7x3e" path="res://Fonts/Calibri/calibri.ttf" id="3_b827x"]
+[ext_resource type="Script" path="res://Scripts/quaternions_input.gd" id="3_morvk"]
+[ext_resource type="Script" path="res://Scripts/axes3d.gd" id="5_qsajj"]
+[ext_resource type="FontFile" uid="uid://d18oftj442jvg" path="res://Fonts/Times New Roman/times.ttf" id="6_cyh25"]
+
+[node name="Quaternions" type="Node3D"]
+
+[node name="Sphere" type="Node3D" parent="."]
+script = ExtResource("2_wi1cq")
+subdivisions = 32
+
+[node name="Face" type="MeshInstance3D" parent="Sphere"]
+skeleton = NodePath("../..")
+script = ExtResource("3_3ixt3")
+
+[node name="CameraRotator" type="Node3D" parent="."]
+script = ExtResource("2_tgpie")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
+
+[node name="k1" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.2, 0.2)
+text = "k"
+font = ExtResource("6_cyh25")
+
+[node name="k2" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 2.2, 0.2)
+text = "2k"
+font = ExtResource("6_cyh25")
+
+[node name="k3" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, 0.2)
+text = "3k"
+font = ExtResource("6_cyh25")
+
+[node name="k-1" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0.2)
+text = "-k"
+font = ExtResource("6_cyh25")
+
+[node name="k-2" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -2.2, 0.2)
+text = "-2k"
+font = ExtResource("6_cyh25")
+font_size = 48
+
+[node name="k-3" type="Label3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, -3.2, 0.2)
+text = "-3k"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 508.0
+offset_bottom = 636.0
+color = Color(0.0352941, 0.0705882, 0.109804, 1)
+script = ExtResource("3_morvk")
+
+[node name="xInput" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 16.0
+offset_right = 463.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 28
+text = "0"
+placeholder_text = "Degrees"
+
+[node name="yInput" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 80.0
+offset_right = 463.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 28
+text = "0"
+placeholder_text = "Degrees"
+
+[node name="zInput" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 144.0
+offset_right = 463.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 28
+text = "0"
+placeholder_text = "Degrees"
+
+[node name="xLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 166.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 28
+text = "X Axis:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 166.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 28
+text = "Y Axis:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="zLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 144.0
+offset_right = 166.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 28
+text = "Z Axis:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="a" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 208.0
+offset_right = 94.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "1"
+placeholder_text = "a"
+alignment = 1
+
+[node name="w" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 208.0
+offset_right = 124.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="b" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 208.0
+offset_right = 202.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "0"
+placeholder_text = "b"
+alignment = 1
+
+[node name="i" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 208.0
+offset_right = 232.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "i +"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="c" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 208.0
+offset_right = 310.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "0"
+placeholder_text = "c"
+alignment = 1
+
+[node name="j" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 208.0
+offset_right = 340.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "j +"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="d" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 208.0
+offset_right = 418.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "0"
+placeholder_text = "d"
+alignment = 1
+
+[node name="k" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 208.0
+offset_right = 448.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "k"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="aLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 272.0
+offset_right = 32.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "a:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="aSlider" type="HSlider" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 272.0
+offset_right = 464.0
+offset_bottom = 288.0
+min_value = -1e+07
+max_value = 1e+07
+value = 1e+07
+
+[node name="bLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 304.0
+offset_right = 32.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "b:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bSlider" type="HSlider" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 304.0
+offset_right = 464.0
+offset_bottom = 320.0
+min_value = -1e+07
+max_value = 1e+07
+
+[node name="cLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 336.0
+offset_right = 32.0
+offset_bottom = 352.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "c:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cSlider" type="HSlider" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 336.0
+offset_right = 464.0
+offset_bottom = 352.0
+min_value = -1e+07
+max_value = 1e+07
+
+[node name="dLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 368.0
+offset_right = 32.0
+offset_bottom = 384.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 16
+text = "d:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dSlider" type="HSlider" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 368.0
+offset_right = 464.0
+offset_bottom = 384.0
+min_value = -1e+07
+max_value = 1e+07
+
+[node name="AnimateButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 400.0
+offset_right = 464.0
+offset_bottom = 448.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 28
+text = "Animate Multiplication"
+
+[node name="ResetButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 464.0
+offset_right = 464.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 28
+text = "Reset
+"
+
+[node name="backbutton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 544.0
+offset_right = 464.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("3_b827x")
+theme_override_font_sizes/font_size = 28
+text = "Go Back"
+
+[node name="Axes3D" type="Node3D" parent="."]
+script = ExtResource("5_qsajj")
+
+[node name="i1" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.2, 0.2, 0)
+text = "i"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="i2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.2, 0.2, 0)
+text = "2i"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="i3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.2, 0.2, 0)
+text = "3i"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="i-1" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.2, 0.2, 0)
+text = "-i"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="i-2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.2, 0.2, 0)
+text = "-2i"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="i-3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.2, 0.2, 0)
+text = "-3i"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="j1" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, -1.2)
+text = "j"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="j2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, -2.2)
+text = "2j"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="j3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, -3.2)
+text = "3j"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="j-1" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, 1.2)
+text = "-j"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="j-3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, 3.2)
+text = "-3j"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[node name="j-2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.2, 2.2)
+text = "-2j"
+font = ExtResource("6_cyh25")
+font_size = 64
+
+[connection signal="button_down" from="CanvasLayer/ColorRect/AnimateButton" to="Sphere" method="_on_animate_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/ColorRect/ResetButton" to="Sphere" method="_on_reset_button_button_down"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/backbutton" to="CameraRotator" method="_on_backbutton_pressed"]

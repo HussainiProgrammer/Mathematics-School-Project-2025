@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn5rekdmkrsp7"]
+
+[ext_resource type="Script" path="res://Scripts/number_item.gd" id="1_jh8ag"]
+[ext_resource type="FontFile" uid="uid://dakf6jojb7x3e" path="res://Fonts/Calibri/calibri.ttf" id="2_vg2s2"]
+
+[node name="NumberItem" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0705882, 0.109804, 1)
+script = ExtResource("1_jh8ag")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+offset_right = 61.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_vg2s2")
+theme_override_font_sizes/font_size = 28
+text = "1 + 1i"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -36.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_vg2s2")
+theme_override_font_sizes/font_size = 28
+text = "Remove"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

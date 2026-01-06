@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0qyqsdhsd2y8"]
+
+[ext_resource type="Script" path="res://Scripts/projection1.gd" id="1_2fq13"]
+[ext_resource type="Script" path="res://Scripts/face.gd" id="2_ctt87"]
+
+[node name="Projection1" type="Node3D"]
+script = ExtResource("1_2fq13")
+
+[node name="Face" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../..")
+script = ExtResource("2_ctt87")

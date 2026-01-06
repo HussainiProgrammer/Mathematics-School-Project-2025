@@ -1,0 +1,196 @@
+[gd_scene load_steps=9 format=3 uid="uid://3k37le78akel"]
+
+[ext_resource type="Script" path="res://Scripts/face.gd" id="1_2vcoy"]
+[ext_resource type="Script" path="res://Scripts/hypersphere_repr.gd" id="2_nmb7f"]
+[ext_resource type="Script" path="res://Scripts/edge.gd" id="3_2sfc1"]
+[ext_resource type="Script" path="res://Scripts/camera_rotator.gd" id="3_mgf71"]
+[ext_resource type="PackedScene" uid="uid://dm00qhofo16rg" path="res://Scenes/crossed_circle.tscn" id="6_2snuq"]
+[ext_resource type="Script" path="res://Scripts/axes3d.gd" id="6_2viwx"]
+[ext_resource type="FontFile" uid="uid://dakf6jojb7x3e" path="res://Fonts/Calibri/calibri.ttf" id="7_eq85n"]
+[ext_resource type="PackedScene" uid="uid://6tvd2sdk2l0a" path="res://Scenes/crossed_sphere.tscn" id="7_lu3ak"]
+
+[node name="HyperSphereMain" type="Node3D"]
+
+[node name="Hypersphere" type="Node3D" parent="."]
+script = ExtResource("2_nmb7f")
+subdivisions = 64
+
+[node name="Face" type="MeshInstance3D" parent="Hypersphere"]
+skeleton = NodePath("../..")
+script = ExtResource("1_2vcoy")
+
+[node name="SquareEdges" type="Node3D" parent="."]
+
+[node name="Edge1" type="Node3D" parent="SquareEdges"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+script = ExtResource("3_2sfc1")
+direction = Vector3(0, 0, 90)
+
+[node name="Edge2" type="Node3D" parent="SquareEdges"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+script = ExtResource("3_2sfc1")
+direction = Vector3(90, 0, 0)
+
+[node name="Edge3" type="Node3D" parent="SquareEdges"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+script = ExtResource("3_2sfc1")
+direction = Vector3(0, 0, 90)
+
+[node name="Edge4" type="Node3D" parent="SquareEdges"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+script = ExtResource("3_2sfc1")
+direction = Vector3(90, 0, 0)
+
+[node name="CameraRotator" type="Node3D" parent="."]
+script = ExtResource("3_mgf71")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRotator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.436, 4.981)
+
+[node name="Axes3D" type="Node3D" parent="."]
+script = ExtResource("6_2viwx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 520.0
+grow_vertical = 2
+color = Color(0.270588, 0.403922, 0.537255, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/ColorRect/SubViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="CrossedCircle" parent="CanvasLayer/ColorRect/SubViewportContainer/SubViewport" instance=ExtResource("6_2snuq")]
+
+[node name="label2d" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_right = 256.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("7_eq85n")
+theme_override_font_sizes/font_size = 48
+text = "The 2D Intersection
+within the 2D Plane"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label2d2" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -174.0
+offset_right = 256.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_eq85n")
+theme_override_font_sizes/font_size = 28
+text = "Move the sphere up and down
+using the arrow keys.
+
+Press Escape to Go Back."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -520.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.92, 0.46, 0, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/ColorRect2/SubViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="CrossedSphere" parent="CanvasLayer/ColorRect2/SubViewportContainer/SubViewport" instance=ExtResource("7_lu3ak")]
+
+[node name="label2d2" type="Label" parent="CanvasLayer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -148.0
+offset_right = 256.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.470588, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_eq85n")
+theme_override_font_sizes/font_size = 21
+text = "This represents the resulting shape when a 4D
+hypersphere (instead of a 3D sphere) passes through
+a 3D hyperplane (instead of a 2D plane)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label2d" type="Label" parent="CanvasLayer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_right = 256.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("7_eq85n")
+theme_override_font_sizes/font_size = 48
+text = "The 3D Intersection
+within the 3D Hyperplane"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,259 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5kn404uenbrq"]
+
+[ext_resource type="Script" path="res://Scripts/complex_numbers_scene.gd" id="1_k55cw"]
+[ext_resource type="PackedScene" uid="uid://bal5q0te6p8lo" path="res://Scenes/dynamic_grid.tscn" id="1_sdk10"]
+[ext_resource type="PackedScene" uid="uid://bn6oxgjmmih62" path="res://Scenes/complex_number_object.tscn" id="2_nfyi8"]
+[ext_resource type="FontFile" uid="uid://dakf6jojb7x3e" path="res://Fonts/Calibri/calibri.ttf" id="3_4wic8"]
+
+[node name="Complex Numbers" type="Node2D"]
+script = ExtResource("1_k55cw")
+
+[node name="DynamicGrid" parent="." instance=ExtResource("1_sdk10")]
+static_color = Color(0.125911, 0.125911, 0.125911, 1)
+main_grid_width = 6.0
+unit_mark_width = 3.0
+axis_length = 10000
+
+[node name="ComplexNumbers" type="Node2D" parent="."]
+
+[node name="n1" parent="ComplexNumbers" instance=ExtResource("2_nfyi8")]
+
+[node name="n2" parent="ComplexNumbers" instance=ExtResource("2_nfyi8")]
+line_color = Color(1, 1, 0, 1)
+
+[node name="n3" parent="ComplexNumbers" instance=ExtResource("2_nfyi8")]
+line_color = Color(1, 0, 1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 348.0
+offset_bottom = 844.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+color = Color(0.0333532, 0.0724091, 0.111554, 1)
+
+[node name="BackButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 304.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "Go Back"
+
+[node name="a1" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 120.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+placeholder_text = "a₁"
+alignment = 1
+
+[node name="+1" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 96.0
+offset_right = 160.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="b1" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 96.0
+offset_right = 264.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+placeholder_text = "b₁"
+alignment = 1
+
+[node name="i1" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 264.0
+offset_top = 96.0
+offset_right = 304.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "i
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play1Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 176.0
+offset_right = 304.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "Animate Multiplier"
+
+[node name="Clear1Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 256.0
+offset_right = 304.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "Remove Multiplier"
+
+[node name="a2" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 336.0
+offset_right = 120.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+placeholder_text = "a₂"
+alignment = 1
+
+[node name="+2" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 336.0
+offset_right = 160.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="b2" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 336.0
+offset_right = 264.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+placeholder_text = "b₂"
+alignment = 1
+
+[node name="i2" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 264.0
+offset_top = 336.0
+offset_right = 304.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "i
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play2Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 416.0
+offset_right = 304.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "Animate Multiplicand"
+
+[node name="Clear2Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 496.0
+offset_right = 304.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "Remove Multiplicand"
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 576.0
+offset_right = 304.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "Animate Product"
+
+[node name="a3" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 656.0
+offset_right = 120.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+placeholder_text = "a"
+alignment = 1
+editable = false
+
+[node name="+3" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 656.0
+offset_right = 160.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="b3" type="LineEdit" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 656.0
+offset_right = 264.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+placeholder_text = "b"
+alignment = 1
+editable = false
+
+[node name="i3" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 264.0
+offset_top = 656.0
+offset_right = 304.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "i
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClearButton" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 736.0
+offset_right = 304.0
+offset_bottom = 800.0
+theme_override_fonts/font = ExtResource("3_4wic8")
+theme_override_font_sizes/font_size = 28
+text = "Clear All"
+
+[connection signal="button_down" from="CanvasLayer/ColorRect/BackButton" to="." method="_on_back_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/ColorRect/Play1Button" to="." method="_on_play_1_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/ColorRect/Clear1Button" to="." method="_on_clear_1_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/ColorRect/Play2Button" to="." method="_on_play_2_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/ColorRect/Clear2Button" to="." method="_on_clear_2_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/ColorRect/PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/ColorRect/ClearButton" to="." method="_on_clear_button_button_down"]
