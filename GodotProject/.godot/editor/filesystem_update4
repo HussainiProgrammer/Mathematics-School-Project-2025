@@ -1,12 +1,4 @@
-res://Scenes/linelander.tscn
-res://wireframe_shader.gdshader
-res://Scripts/LinelanderCircle.gd
-res://Scripts/complex_numbers_scene.gd
-res://Scenes/mainmenu.tscn
-res://Scenes/complex_numbers_scene.tscn
-res://Scenes/quaternions.tscn
 res://Scenes/flatlander.tscn
+res://wireframe_shader.gdshader
 res://Scenes/hyper_sphere_main.tscn
-res://Scripts/sphere.gd
-res://Scripts/camera_rotator.gd
-res://Scripts/projection1.gd
+res://Scripts/hypersphere_repr.gd

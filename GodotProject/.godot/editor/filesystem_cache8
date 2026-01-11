@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1767656144
+::res://::1767721731
 360.png::CompressedTexture2D::4598641417156097407::1767651382::1767651491::1::::<><>::
-export_presets.cfg::TextFile::-1::1767653564::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1767660619::0::1::::<><>::
 icon.svg::CompressedTexture2D::1469032917785827054::1739825921::1739825934::1::::<><>::
 mainmenu.gd::GDScript::-1::1742428186::0::1::::<>Node2D<>::
-wireframe_shader.gdshader::Shader::-1::1767653651::0::1::::<><>::
+wireframe_shader.gdshader::Shader::-1::1767717858::0::1::::<><>::
 wireframe_shader.tres::ShaderMaterial::8889946697702481616::1742146306::0::1::::<><>::res://wireframe_shader.gdshader
 ::res://Fonts/::1740646119
 ::res://Fonts/Calibri/::1740492398
@@ -22,38 +22,38 @@ times.ttf::FontFile::9053156431624718588::1622894706::1740492397::1::::<><>::
 timesbd.ttf::FontFile::2552421737303521303::1622894706::1740492397::1::::<><>::
 timesbi.ttf::FontFile::7454374443359122343::1622894706::1740492397::1::::<><>::
 timesi.ttf::FontFile::5865275424763167535::1622894706::1740492397::1::::<><>::
-::res://Scenes/::1767653554
-complex_numbers_scene.tscn::PackedScene::4513572238101524542::1746274949::0::1::::<><>::res://Scripts/complex_numbers_scene.gd<>uid://bal5q0te6p8lo::::res://Scenes/dynamic_grid.tscn<>uid://bn6oxgjmmih62::::res://Scenes/complex_number_object.tscn<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf
+::res://Scenes/::1767717713
+complex_numbers_scene.tscn::PackedScene::4513572238101524542::1767660811::0::1::::<><>::res://Scripts/complex_numbers_scene.gd<>uid://bal5q0te6p8lo::::res://Scenes/dynamic_grid.tscn<>uid://bn6oxgjmmih62::::res://Scenes/complex_number_object.tscn<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf
 complex_number_object.tscn::PackedScene::3363762802126843541::1742422572::0::1::::<><>::res://Scripts/complex_number.gd<>res://Scripts/circle2d.gd<>uid://y12pv6vd641o::::res://Fonts/Calibri/calibrib.ttf
 crossed_circle.tscn::PackedScene::8054684505646483092::1742146535::0::1::::<><>::res://Scripts/crossed_circle.gd<>res://Scripts/circle2d.gd
 crossed_sphere.tscn::PackedScene::2216359190423627862::1767650530::0::1::::<><>::res://Scripts/crossed_sphere.gd<>res://Scripts/variable_color_sphere.gd<>res://Scripts/camera_rotator.gd<>res://Scenes/plate.gd<>res://Scripts/axes3d.gd
 dynamic_grid.tscn::PackedScene::2410980264132064560::1742409762::0::1::::<><>::res://Scripts/dynamic_grid.gd<>uid://y12pv6vd641o::::res://Fonts/Calibri/calibrib.ttf
-flatlander.tscn::PackedScene::2134050049530076320::1767200282::0::1::::<><>::res://Scripts/sphere.gd<>res://Scripts/camera_rotator.gd<>uid://d18oftj442jvg::::res://Fonts/Times New Roman/times.ttf<>uid://b0qyqsdhsd2y8::::res://Scenes/surface_projection.tscn<>res://Scripts/axes3d.gd<>uid://bcmoape4415gt::::res://Fonts/Times New Roman/timesbd.ttf<>res://Scripts/face.gd<>uid://deg7ptova43bn::::res://Fonts/Times New Roman/timesbi.ttf
-hyper_sphere_main.tscn::PackedScene::1987689206042035787::1767653331::0::1::::<><>::res://Scripts/face.gd<>res://Scripts/hypersphere_repr.gd<>res://Scripts/edge.gd<>res://Scripts/camera_rotator.gd<>uid://dm00qhofo16rg::::res://Scenes/crossed_circle.tscn<>res://Scripts/axes3d.gd<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf<>uid://6tvd2sdk2l0a::::res://Scenes/crossed_sphere.tscn
-linelander.tscn::PackedScene::3139924425913170255::1746274949::0::1::::<><>::uid://bal5q0te6p8lo::::res://Scenes/dynamic_grid.tscn<>res://Scripts/LinelanderCircle.gd<>uid://y12pv6vd641o::::res://Fonts/Calibri/calibrib.ttf<>res://Scripts/point_mark_2d.gd<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf
-mainmenu.tscn::PackedScene::7349725675395158786::1767653554::0::1::::<><>::res://mainmenu.gd<>uid://y12pv6vd641o::::res://Fonts/Calibri/calibrib.ttf<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf<>uid://d18oftj442jvg::::res://Fonts/Times New Roman/times.ttf
+flatlander.tscn::PackedScene::2134050049530076320::1767717713::0::1::::<><>::res://Scripts/sphere.gd<>res://Scripts/camera_rotator.gd<>uid://d18oftj442jvg::::res://Fonts/Times New Roman/times.ttf<>uid://b0qyqsdhsd2y8::::res://Scenes/surface_projection.tscn<>res://Scripts/axes3d.gd<>uid://bcmoape4415gt::::res://Fonts/Times New Roman/timesbd.ttf<>res://Scripts/face.gd<>uid://deg7ptova43bn::::res://Fonts/Times New Roman/timesbi.ttf<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf
+hyper_sphere_main.tscn::PackedScene::1987689206042035787::1767660812::0::1::::<><>::res://Scripts/face.gd<>res://Scripts/hypersphere_repr.gd<>res://Scripts/edge.gd<>res://Scripts/camera_rotator.gd<>uid://dm00qhofo16rg::::res://Scenes/crossed_circle.tscn<>res://Scripts/axes3d.gd<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf<>uid://6tvd2sdk2l0a::::res://Scenes/crossed_sphere.tscn
+linelander.tscn::PackedScene::3139924425913170255::1767660811::0::1::::<><>::uid://bal5q0te6p8lo::::res://Scenes/dynamic_grid.tscn<>res://Scripts/LinelanderCircle.gd<>uid://y12pv6vd641o::::res://Fonts/Calibri/calibrib.ttf<>res://Scripts/point_mark_2d.gd<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf
+mainmenu.tscn::PackedScene::7349725675395158786::1767660811::0::1::::<><>::res://mainmenu.gd<>uid://y12pv6vd641o::::res://Fonts/Calibri/calibrib.ttf<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf<>uid://d18oftj442jvg::::res://Fonts/Times New Roman/times.ttf
 new_quat_sphere.gd::GDScript::-1::1742429342::0::1::::<>Node3D<>::
 number_item.tscn::PackedScene::8134688213475359566::1741005475::0::1::::<><>::res://Scripts/number_item.gd<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf
 plate.gd::GDScript::-1::1742423827::0::1::::<>MeshInstance3D<>::
-quaternions.tscn::PackedScene::2896214317067126280::1746274949::0::1::::<><>::res://Scripts/camera_rotator.gd<>res://Scenes/new_quat_sphere.gd<>res://Scripts/face.gd<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf<>res://Scripts/quaternions_input.gd<>res://Scripts/axes3d.gd<>uid://d18oftj442jvg::::res://Fonts/Times New Roman/times.ttf
+quaternions.tscn::PackedScene::2896214317067126280::1767660812::0::1::::<><>::res://Scripts/camera_rotator.gd<>res://Scenes/new_quat_sphere.gd<>res://Scripts/face.gd<>uid://dakf6jojb7x3e::::res://Fonts/Calibri/calibri.ttf<>res://Scripts/quaternions_input.gd<>res://Scripts/axes3d.gd<>uid://d18oftj442jvg::::res://Fonts/Times New Roman/times.ttf
 surface_projection.tscn::PackedScene::4175658549634708373::1742126679::0::1::::<><>::res://Scripts/projection1.gd<>res://Scripts/face.gd
-::res://Scripts/::1767650486
+::res://Scripts/::1767717713
 axes3d.gd::GDScript::-1::1742129300::0::1::::Axes3D<>Node3D<>::
 camera_container.gd::GDScript::-1::1749651904::0::1::::<>Node3D<>::
-camera_rotator.gd::GDScript::-1::1742429123::0::1::::CameraRotator<>Node3D<>::
+camera_rotator.gd::GDScript::-1::1767658419::0::1::::CameraRotator<>Node3D<>::
 circle2d.gd::GDScript::-1::1742126396::0::1::::Circle2D<>Polygon2D<>::
 complex_number.gd::GDScript::-1::1746274943::0::1::::ComplexNumber<>Node2D<>::
-complex_numbers_scene.gd::GDScript::-1::1742428488::0::1::::ComplexNumberScene<>Node2D<>::
+complex_numbers_scene.gd::GDScript::-1::1767656593::0::1::::ComplexNumberScene<>Node2D<>::
 crossed_circle.gd::GDScript::-1::1742143403::0::1::::CrossedCircleSubscene<>Node2D<>::
 crossed_sphere.gd::GDScript::-1::1742147004::0::1::::CrossedSphere<>Node3D<>::
 dynamic_grid.gd::GDScript::-1::1742421709::0::1::::DynamicGrid<>Node2D<>::
 edge.gd::GDScript::-1::1742141477::0::1::::SquareEdge<>Node3D<>::
 face.gd::GDScript::-1::1742130581::0::1::::Face<>MeshInstance3D<>::
 hypersphere_repr.gd::GDScript::-1::1742428749::0::1::::HypersphereRepr<>Node3D<>::
-LinelanderCircle.gd::GDScript::-1::1744671140::0::1::::LinelanderCircle<>Node2D<>::
+LinelanderCircle.gd::GDScript::-1::1767656593::0::1::::LinelanderCircle<>Node2D<>::
 point_mark_2d.gd::GDScript::-1::1742415473::0::1::::<>Node2D<>::
-projection1.gd::GDScript::-1::1744700269::0::1::::FlatlanderSurfaceProjection<>Node3D<>::
+projection1.gd::GDScript::-1::1767659395::0::1::::FlatlanderSurfaceProjection<>Node3D<>::
 quaternions_input.gd::GDScript::-1::1742426269::0::1::::QuaternionInputContainer<>ColorRect<>::
 quaternion_sphere.gd::GDScript::-1::1742425381::0::1::::QuaternionSphere<>MeshInstance3D<>::
-sphere.gd::GDScript::-1::1767195810::0::1::::FlatlanderSphere<>Node3D<>::
+sphere.gd::GDScript::-1::1767717713::0::1::::FlatlanderSphere<>Node3D<>::
 variable_color_sphere.gd::GDScript::-1::1742423317::0::1::::VariableColorSphere<>MeshInstance3D<>::

@@ -16,7 +16,7 @@
 script = ExtResource("2_aph3d")
 
 [node name="Camera3D" type="Camera3D" parent="CameraRotator"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 3)
 
 [node name="k1" type="Label3D" parent="CameraRotator"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.2, 0.2)
@@ -275,6 +275,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="check1" type="CheckButton" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
 offset_left = 316.0
 offset_top = 16.0
 offset_right = 380.0

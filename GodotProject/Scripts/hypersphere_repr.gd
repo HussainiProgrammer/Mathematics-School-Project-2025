@@ -37,8 +37,8 @@ func _ready():
 	face.queue_free()
 	
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("test3"): position.y += 0.8 * delta
-	if Input.is_action_pressed("test4"): position.y -= 0.8 * delta
+	if Input.is_action_pressed("test3"): position.y += 0.42 * delta
+	if Input.is_action_pressed("test4"): position.y -= 0.42 * delta
 	if Input.is_action_just_pressed("quit"):
 		get_tree().change_scene_to_file("res://Scenes/mainmenu.tscn")
 	

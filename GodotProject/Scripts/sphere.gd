@@ -34,7 +34,7 @@ func _ready():
 			current_face.p1 = p1
 			current_face.p2 = p2
 			current_face.p3 = p3
-			current_face.face_color = Color(color, 1)
+			current_face.face_color = Color(color, 0.64)
 
 			faces.append({"p0": p0, "p1": p1, "p2": p2, "p3": p3, "color": color})
 			
